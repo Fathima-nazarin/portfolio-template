@@ -1,17 +1,18 @@
 :root {
-    --bg: #fff;
-    --fg: #1a1a2e;
-    --muted: #5b6475;
-    --card: #f3f4f8;
-    --accent: #e8590c;
+    --bg: rgb(255, 255, 203);
+    --fg: rgb(137, 75, 36);
+    --muted: grey;
+    --card: rgb(241, 204, 173);
+    --accent: rgb(5, 80, 90);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #10111a;
+        --bg: #18141c;
         --fg: #f2f2f7;
         --muted: #a0a6b8;
-        --card: #1b1d2b;
+        --card: #2c2439;
+        --accent:#4dd1c6;
     }
 }
 
@@ -21,7 +22,8 @@
 
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
+    padding-top: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: var(--bg);
     color: var(--fg);
     line-height: 1.6;
@@ -33,20 +35,24 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 6vw, 3.4rem);
+    font-size: clamp(2rem, 8vw, 3.7rem);
     margin: 0;
     color: var(--accent);
 }
-
+.hero #tagline{
+    font-size: 18px;
+}
 nav a {
+    font-size: 20px;
     margin: 0 8px;
     color: var(--accent);
     text-decoration: none;
 }
 
 main {
-    max-width: 860px;
-    margin: auto;
+    font-size: 20px;
+    max-width: 900px;
+    justify-self: center;
     padding: 0 20px;
 }
 
@@ -67,6 +73,7 @@ h2 {
     background: var(--card);
     padding: 4px 14px;
     border-radius: 99px;
+    font-weight: bold;
 }
 
 .grid {
