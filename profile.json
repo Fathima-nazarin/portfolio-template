@@ -1,19 +1,21 @@
 {
-    "name": "Your Name",
-    "tagline": "Your one-line introduction",
-    "bio": "Write 2 or 3 sentences about yourself.",
+    "name": "Fathima Nazarin",
+    "tagline": "Future Electronics Engineer with a passion for code.",
+    "bio": "Second year ECE student at TKMCE. I like learning about and building embedded systems. Away from breadboard, I paint and read which makes me a more patient debugger.",
     "skills": [
-        "Git",
-        "HTML"
+        "Java","Circuit Design",
+        "Git","Digital Logic",
+        "HTML","Python"
     ],
     "projects": [
         {
-            "title": "My first project",
-            "desc": "What it does.",
-            "link": "https://github.com/yourname"
+            "title": "Global Weather Dashboard",
+            "desc": "Fetches real-time weather data for locations around the world using api.",
+            "link": "https://github.com/Fathima-nazarin/WeatherApp"
         }
     ],
     "links": {
-        "github": "https://github.com/yourname"
+        "github": "https://github.com/Fathima-nazarin"
     }
+
 }
