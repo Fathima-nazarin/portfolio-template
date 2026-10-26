@@ -1,9 +1,10 @@
 :root {
-    --bg: rgb(255, 255, 203);
+    --bg: rgba(255, 255, 203, 0.335);
     --fg: rgb(137, 75, 36);
     --muted: grey;
-    --card: rgb(241, 204, 173);
+    --card: rgba(157, 214, 165, 0.516);
     --accent: rgb(5, 80, 90);
+    --glow: rgb(54, 141, 152);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,7 @@
         --muted: #a0a6b8;
         --card: #2c2439;
         --accent:#4dd1c6;
+        --glow: var(--accent)
     }
 }
 
@@ -31,26 +33,21 @@ body {
 
 .hero {
     text-align: center;
-    padding: 64px 20px 32px;
+    padding: 30px 20px 32px;
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 8vw, 3.7rem);
+    font-size: clamp(2rem, 5vw, 3.4rem);
     margin: 0;
     color: var(--accent);
 }
-.hero #tagline{
-    font-size: 18px;
-}
 nav a {
-    font-size: 20px;
     margin: 0 8px;
     color: var(--accent);
     text-decoration: none;
 }
 
 main {
-    font-size: 20px;
     max-width: 900px;
     justify-self: center;
     padding: 0 20px;
@@ -101,7 +98,7 @@ footer {
 }
 .img_container{
     width: 100%; 
-    max-width: 500px; 
+    max-width: 450px; 
     margin: 0 auto;
     aspect-ratio: 5/3;
 }
@@ -114,7 +111,7 @@ footer {
     
     border-radius: 2%;
     background-position: center;
-    border:2px solid lightblue ;
-    box-shadow: 0px 0px  15px 8px rgba(119, 250, 255, 0.3);
+    border:2px solid var(--glow) ;
+    box-shadow: 0px 0px  15px 8px var(--glow);
     
 }
