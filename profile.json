@@ -12,6 +12,11 @@
             "title": "Global Weather Dashboard",
             "desc": "Fetches real-time weather data for locations around the world using api.",
             "link": "https://github.com/Fathima-nazarin/WeatherApp"
+        },
+        {
+            "title": "Functional scientific calculator app",
+            "desc":"A simple desktop calculator built using Java and Java Swing with a built-in toggle to expand into a fully scientific calculator for trigonometric, logarithmic, and other advanced mathematical operations.",
+            "link":"https://github.com/Fathima-nazarin/Calculator-app-java"
         }
     ],
     "links": {

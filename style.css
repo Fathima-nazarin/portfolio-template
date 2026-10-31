@@ -1,9 +1,12 @@
 :root {
         --bg: rgb(24, 20, 28);
         --fg: rgb(242, 242, 247);
-        --muted: rgb(177, 160, 207);
+        --muted: rgb(211, 196, 237);
         --card: rgb(44, 36, 57);
+        --bg2:rgb(96, 87, 108);
+        --card2:rgb(51, 46, 65);
         --accent:rgb(59, 204, 194);
+        --color: rgb(233, 233, 224);
         --accent2: rgb(197, 72, 228);
         --glow: var(--accent);
         --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
@@ -12,10 +15,12 @@
 :root[data-theme="light"]{
     --bg: rgba(255, 255, 203, 0.335);
     --fg: rgb(50, 37, 106);
+    --bg2:rgb(246, 239, 255);
     --muted: rgb(50, 62, 76);
     --card: rgba(203, 250, 209, 0.69);
     --card2: rgba(165, 221, 175, 0.987);
     --accent: rgb(81, 30, 100);
+    --color: rgb(54, 54, 54);
     --accent2: #48cae4;
     --glow: rgb(120, 229, 248);
     --on-accent: rgb(213, 172, 238);
@@ -91,8 +96,10 @@ body {
     
 }
 .navbar button{
+    background-color: var(--bg2);
+    color: var(--color);
     border-radius:50px;
-    border: 2px solid transparent;
+    border: 2px solid rgba(126, 138, 125, 0.9);
     width: 50px;
     height: 25px;
     transition: transform 0.3s, border-color 0.3s;
