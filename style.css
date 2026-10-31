@@ -4,22 +4,29 @@
     --muted: grey;
     --card: rgba(157, 214, 165, 0.516);
     --accent: rgb(5, 80, 90);
-    --glow: rgb(54, 141, 152);
+    --accent2: #48cae4;
+    --glow: rgb(54, 142, 153);
+    --on-accent: rgb(13, 17, 23);
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #18141c;
-        --fg: #f2f2f7;
-        --muted: #a0a6b8;
-        --card: #2c2439;
-        --accent:#4dd1c6;
+        --bg: rgb(24, 20, 28);
+        --fg: rgb(242, 242, 247);
+        --muted: rgb(177, 160, 207);
+        --card: rgb(44, 36, 57);
+        --accent:rgb(59, 204, 194);
+        --accent2: rgb(197, 72, 228);
         --glow: var(--accent)
     }
 }
 
 * {
     box-sizing: border-box;
+}
+html{
+    scroll-behavior:smooth;
 }
 
 body {
@@ -30,13 +37,25 @@ body {
     line-height: 1.6;
     transition: background 0.4s, color 0.4s;
 }
+.gradient-text{
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip:text;
+    color: transparent;
+}
 .navbar{
+    position:sticky;
+    top: 0;
+    z-index: 0;
     text-decoration: none;
-    justify-content: space-between;
     list-style: none;
     padding: 1px 80px;
+    background: var(--card);
+    box-shadow: var(--shadow);
     margin: 0;
+    padding: 0 5%;
     font-weight: bold;
+    transition: background 0.4s;;
     
 }
 .navbar #navname{
@@ -44,6 +63,9 @@ body {
 }
 .navbar ul {
     list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    gap: 12px;
     display: flex;
     position: sticky;
     justify-content: space-between;
@@ -56,11 +78,37 @@ body {
     font-size: 18px;
     align-items: center;
 }
+.navbar .rightlinks a {
+    color: var(--muted);
+    transition: color 0.3s;
+}
+.navbar .rightlinks a:hover {
+    color: var(--accent);
+    transform: scale(1.1) rotate(5deg);
+    
+}
 .navbar button{
     border-radius:50px;
-    border-color: #2c2439;
-    padding: 5px 15px;
+    border: 2px solid transparent;
+    width: 50px;
+    height: 25px;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
+    font-size: 0.8rem;
+
 }
+.navbar button:hover {
+    transform: scale(1.11);
+} 
+.navbar button[aria-pressed="true"] {
+    border-color: var(--accent);
+}
+
+.theme-buttons{
+    display: flex;
+    gap: 6px;
+}
+
 .hero {
     text-align: center;
     padding: 30px 20px 32px;
