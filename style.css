@@ -307,3 +307,23 @@ footer {
     box-shadow: 0 0 15px 6px var(--glow);
     
 }
+@media (max-width: 760px) {
+    .navbar .rightlinks li {
+        display: none;           
+    }
+    .hero {
+        flex-direction: column;  
+        align-items:flex-start;
+        padding: 70px 40px 10px;
+    }
+    .img_container {
+        max-width: 350px;
+        flex: none;
+        align-items: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero::before, .hero::after, .cursor { animation: none; }
+}
