@@ -14,10 +14,11 @@
         <ul>
             <li id="navname">Fathima Nazarin</li>
             <div class="rightlinks">
-                <li>about</li>
-                <li>skills</li>
-                <li>projects</li>
-                <li>contact</li>
+                <li><a href="#bio">about</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+                
                 <div class="theme-buttons">
                     <button id="lightBtn" title="Lightmode">light</button>
                     <button id="darkBtn" title="Darkmode">dark</button>
@@ -26,27 +27,33 @@
         </ul>
     </nav>
   <header class="hero">
-    <p class="hello">Hello, I'm</p>
-    <h1>Fathima <span class="gradient-text">Nazarin</span></h1>
-    <h2>I love <span id="typing"></span><span class="cursor">|</span></h2>
-    <p id="tagline"></p>
-    <nav id="links"></nav>
+    <div class="hero_content">
+        <p class="hello">Hello, I'm</p>
+        <h1>Fathima <span class="gradient-text">Nazarin</span></h1>
+        <h2>I love <span id="typing"></span><span class="cursor">|</span></h2>
+        <p id="tagline"></p>
+        <nav id="links"></nav>
+    </div>
   </header>
   <main>
     <div class="img_container">
         <img src="images/15.gif" class="img">
     </div>
-    <section>
+    <section id="about">
       <h2>About</h2>
       <p id="bio"></p>
     </section>
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <ul id="skills" class="chips"></ul>
     </section>
-    <section>
+    <section class="projects">
       <h2>Projects</h2>
       <div id="projects" class="grid"></div>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Want to collaborate or just say hi? Find me on the links at the top of this page.</p>
     </section>
   </main>
   <footer id="footer"></footer>
