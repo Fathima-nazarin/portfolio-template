@@ -15,4 +15,23 @@ fetch('profile.json').then((r) => r.json()).then((p) => {
     $('links').innerHTML = Object.entries(p.links || {}).map(([k, v]) =>
         `<a href="${safe(v)}" target="_blank" rel="noopener">${esc(k)}</a>`).join('');
     $('footer').textContent = `\u00A9 ${new Date().getFullYear()} ${p.name}`;
-});
+}).catch((err) => console.log('Could not load profile.json:', err));
+
+const lightBtn = $('lightBtn');
+const darkBtn = $('darkBtn');
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    lightBtn.setAttribute('aria-pressed', theme === 'light');
+    darkBtn.setAttribute('aria-pressed', theme === 'dark');
+    try { 
+        localStorage.setItem('theme', theme); 
+    }catch (e) {}
+}
+
+lightBtn.addEventListener('click', () => setTheme('light'));
+darkBtn.addEventListener('click', () => setTheme('dark'));
+
+let savedTheme = 'dark';
+try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+setTheme(savedTheme);

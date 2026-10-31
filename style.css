@@ -1,26 +1,28 @@
 :root {
-    --bg: rgba(255, 255, 203, 0.335);
-    --fg: rgb(137, 75, 36);
-    --muted: grey;
-    --card: rgba(157, 214, 165, 0.516);
-    --accent: rgb(5, 80, 90);
-    --accent2: #48cae4;
-    --glow: rgb(54, 142, 153);
-    --on-accent: rgb(13, 17, 23);
-    --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
         --bg: rgb(24, 20, 28);
         --fg: rgb(242, 242, 247);
         --muted: rgb(177, 160, 207);
         --card: rgb(44, 36, 57);
         --accent:rgb(59, 204, 194);
         --accent2: rgb(197, 72, 228);
-        --glow: var(--accent)
-    }
+        --glow: var(--accent);
+        --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
+
+:root[data-theme="light"]{
+    --bg: rgba(255, 255, 203, 0.335);
+    --fg: rgb(137, 75, 36);
+    --muted: grey;
+    --card: rgba(157, 214, 165, 0.516);
+    --accent: rgb(5, 80, 90);
+    --accent2: #48cae4;
+    --glow: rgb(228, 201, 79);
+    --on-accent: rgb(13, 17, 23);
+    --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+}
+
+
 
 * {
     box-sizing: border-box;
@@ -166,18 +168,69 @@ body {
     margin: 0;
     color: var(--accent);
 }
+.hello {
+    color: var(--fg);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+}
+.hero-content {
+    flex: 1 1 320px;
+    min-width: 0;
+}
+.hero h2{
+    border-left: none;
+    padding-left: 0;
+    font-size: clamp(1.2rem, 3.5vw, 1.7rem);
+    font-weight: 500;
+    margin: 10px 0;
+}
 nav a {
     margin: 0 8px;
     color: var(--accent);
     text-decoration: none;
 }
-
+#typing{
+    color: var(--accent);
+}
+.cursor {
+    animation: blink 0.8s infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+#tagline {
+    color: var(--muted);
+    max-width: 50ch;
+}
 main {
     max-width: 900px;
     justify-self: center;
     padding: 0 20px;
 }
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+#links a {
+    margin: 0;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+}
 
+#links a:hover {
+    transform: translateY(-4px);
+    background: var(--accent);
+    color: var(--on-accent);
+}
 h2 {
     border-left: 4px solid var(--accent);
     padding-left: 10px;
