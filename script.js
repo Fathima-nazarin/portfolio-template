@@ -35,3 +35,27 @@ darkBtn.addEventListener('click', () => setTheme('dark'));
 let savedTheme = 'dark';
 try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (e) {}
 setTheme(savedTheme);
+
+const words = ['embedded systems', 'electronics', 'coding', 'building things'];
+const typingElement = $('typing');
+let wordIndex = 0;
+let letterIndex = 0;
+let deleting = false;
+
+function type() {
+    const currentWord = words[wordIndex];
+    letterIndex += deleting ? -1 : 1;
+    typingElement.textContent = currentWord.substring(0, letterIndex);
+
+    let speed = deleting ? 50 : 100;
+    if (!deleting && letterIndex === currentWord.length) {
+        deleting = true;
+        speed = 1200;
+    } else if (deleting && letterIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 400;
+    }
+    setTimeout(type, speed);
+}
+type();
