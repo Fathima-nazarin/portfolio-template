@@ -11,13 +11,14 @@
 
 :root[data-theme="light"]{
     --bg: rgba(255, 255, 203, 0.335);
-    --fg: rgb(137, 75, 36);
-    --muted: grey;
-    --card: rgba(157, 214, 165, 0.516);
-    --accent: rgb(5, 80, 90);
+    --fg: rgb(50, 37, 106);
+    --muted: rgb(50, 62, 76);
+    --card: rgba(203, 250, 209, 0.69);
+    --card2: rgba(165, 221, 175, 0.987);
+    --accent: rgb(81, 30, 100);
     --accent2: #48cae4;
-    --glow: rgb(228, 201, 79);
-    --on-accent: rgb(13, 17, 23);
+    --glow: rgb(120, 229, 248);
+    --on-accent: rgb(213, 172, 238);
     --shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 
 }
@@ -48,11 +49,11 @@ body {
 .navbar{
     position:sticky;
     top: 0;
-    z-index: 0;
+    z-index: 100;
     text-decoration: none;
     list-style: none;
     padding: 1px 80px;
-    background: var(--card);
+    background: var(--card2);
     box-shadow: var(--shadow);
     margin: 0;
     padding: 0 5%;
@@ -60,8 +61,8 @@ body {
     transition: background 0.4s;;
     
 }
-.navbar #navname{
-    font-size: 24px;
+.navbar .navname{
+    font-size: 22px;
 }
 .navbar ul {
     list-style: none;
@@ -114,24 +115,13 @@ body {
 .hero {
     position: relative;
     isolation: isolate;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 70px 0 50px;
-    text-align: left;
-}
-.hero {
-    position: relative;
-    isolation: isolate;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 70px 0 50px;
+    justify-content: center;
+    gap: 90px;
+    padding: 100px 70px 20px;
     text-align: left;
 }
-
 .hero::before,
 .hero::after {
     content: "";
@@ -164,7 +154,7 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-size: clamp(2.5rem, 5vw, 3.4rem);
     margin: 0;
     color: var(--accent);
 }
@@ -206,7 +196,7 @@ nav a {
 }
 main {
     max-width: 900px;
-    justify-self: center;
+    margin: 0 auto;
     padding: 0 20px;
 }
 #links {
@@ -217,7 +207,7 @@ main {
 }
 #links a {
     margin: 0;
-    padding: 10px 24px;
+    padding: 5px 20px;
     border-radius: 30px;
     border: 2px solid var(--accent);
     color: var(--accent);
@@ -231,7 +221,11 @@ main {
     background: var(--accent);
     color: var(--on-accent);
 }
-h2 {
+section {
+    padding-top: 50px;
+    scroll-margin-top: 60px;
+}
+section h2 {
     border-left: 4px solid var(--accent);
     padding-left: 10px;
 }
@@ -249,8 +243,14 @@ h2 {
     padding: 4px 14px;
     border-radius: 99px;
     font-weight: bold;
+    box-shadow: var(--shadow);
+    border: 1px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
 }
-
+.chips li:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -258,13 +258,29 @@ h2 {
 }
 
 .card {
+    box-shadow: var(--shadow);
     background: var(--card);
-    padding: 16px;
-    border-radius: 12px;
+    padding: 22px;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    color: var(--muted);
 }
 
 .card a {
     color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
 }
 
 footer {
@@ -272,24 +288,22 @@ footer {
     text-align: center;
     color: var(--muted);
     margin-top: 60px;
-    padding: 20px 20px;
+    padding: 20px;
 }
 .img_container{
+    flex: 0 1 400px;
     width: 100%; 
     max-width: 450px; 
-    margin: 0 auto;
-    aspect-ratio: 5/3;
+    margin: 0;
+    aspect-ratio: 5/2.8;
 }
 .img_container .img{
     display: block;
-    justify-self: center;
-
+    object-fit: cover;
+    border-radius: 16px;
     width: 100%;
     height: 100%;
-    
-    border-radius: 2%;
-    background-position: center;
-    border:2px solid var(--glow) ;
-    box-shadow: 0px 0px  15px 8px var(--glow);
+    border: 2px solid var(--glow);
+    box-shadow: 0 0 15px 6px var(--glow);
     
 }
